@@ -1,13 +1,23 @@
 import React from 'react';
+import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../../Hooks/useAuth';
 
 const Login = () => {
     const { singInUsingGoogle, handleRegistration, isLogin, handleNameChange, handleEmailChange, handlePasswordChange, toggleLogin, error, handleResetPassword } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect = location.state?.from || '/home'
+    const handelGoogleLogin = () => {
+        singInUsingGoogle()
+            .then(result => {
+                history.push(redirect);
+            })
+    }
     return (
         <div>
-            <h2>Pleace login</h2>
-            <button onClick={singInUsingGoogle} className="btn btn-warning">Google Sing In</button>
-            <form className="w-75 position-relative" onSubmit={handleRegistration}>
+            <h2 className="text-danger mt-5">Please Login</h2>
+            <button onClick={handelGoogleLogin} className="btn btn-warning mb-5">Google Sing In</button>
+            <form className=" d-flex justify-content-center" onSubmit={handleRegistration}>
                 <div className="">
                     <h3 className="text-primary d-flex justify-content-center">Please {isLogin ? 'Login' : 'Register'}</h3>
                     {!isLogin && <div className="row mb-3">

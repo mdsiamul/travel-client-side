@@ -11,7 +11,11 @@ import AuthProvider from './context/AuthProvider';
 import PrivetRoute from './components/Login/Login/privetRoute/PrivetRoute';
 import Footer from './components/Shared/Footer/Footer';
 import About from './components/About/About';
-import Contact from './components/ContactUs/Contact';
+
+import Dashboard from './components/Dashboard/Dashboard';
+import Contact from './components/Contact/Contact';
+
+
 
 function App() {
   return (
@@ -28,9 +32,15 @@ function App() {
             <Route path="/services">
               <Services></Services>
             </Route>
+
+            <Route path="/dashboard">
+              <Dashboard></Dashboard>
+            </Route>
             <Route path="/contact">
               <Contact></Contact>
             </Route>
+
+
             <Route path="/about">
               <About></About>
             </Route>

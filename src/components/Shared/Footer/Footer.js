@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <div>
-            <footer className="bg-dark text-center text-white sticky-bottom" >
+            <footer className="bg-danger text-center text-white sticky-bottom" >
 
                 <div className="container p-4 pb-0">
 
@@ -48,7 +48,7 @@ const Footer = () => {
 
                 <div className="text-center p-3" >
                     © 2020 Copyright:
-                    Life Fitness Name
+                    Fagun Tour Operator
                 </div>
 
             </footer >
